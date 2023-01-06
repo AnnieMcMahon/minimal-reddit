@@ -1,0 +1,40 @@
+body, html, #root {
+  height: 100%;
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+html {
+  font-size: 24px;
+}
+
+h1 {
+  padding: .77rem 0;
+  background-color: #090a38;
+  text-align: center;
+  font-size: 1.88rem;
+  color: white;
+}
+
+h2 {
+  font-size: 1.55rem;
+}
+
+.App {
+  height: 100%;
+  padding: 0 17% 10% 17%;
+  background-color: #f2957b;
+  color: white;
+}
+
+.App-boxes {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1020px) {
+  .App-boxes {
+    align-items: center;
+    flex-direction: column;
+  }
+}
