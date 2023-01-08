@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResults: [{title: '', id: ' '}],
+      searchResults: [{title: '', id: ' '}]
     }
     this.search = this.search.bind(this);
   }

@@ -6,8 +6,7 @@ export class Post extends React.Component {
             <div className="Post">
                 <div className="Post-information">
                     <h3>{this.props.post.title}</h3>
-                    <p>{this.props.post.id}</p>
-                    <p>{this.props.post.comments}</p>
+                    <a href={this.props.post.url} target="_blank" rel="noreferrer">link</a>
                 </div>
             </div>
         )
