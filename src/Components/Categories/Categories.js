@@ -1,30 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Categories.css';
 
-export class Categories extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {searchTerm: 'Meditation'};
-    this.handleClick = this.handleClick.bind(this);
-  }
+export function Categories(props) {
+  const [searchTerm, setSearchTerm] = useState('Meditation');
 
-  handleClick(event) {
-    this.setState({searchTerm: event.target.innerHTML});
-    this.props.onSearch(this.state.searchTerm);
+  const handleClick = (event) => {
+    setSearchTerm(event.target.innerHTML);
+    props.onSearch(searchTerm);
   }
-
-  render() {
     return (
       <div className="Categories" >
         <h2>Categories</h2>
         <br />
         <ul>
-          <li value="meditation" key="meditation" onClick={this.handleClick}>Meditation</li>
-          <li value="hiking" key="hiking" onClick={this.handleClick}>Hiking</li>
-          <li value="healthy recipes" key="healthy recipes" onClick={this.handleClick}>Healthy Recipes</li>
-          <li value="backpacking" key="backpacking" onClick={this.handleClick}>Backpacking</li>
+          <li value="meditation" key="meditation" onClick={handleClick}>Meditation</li>
+          <li value="hiking" key="hiking" onClick={handleClick}>Hiking</li>
+          <li value="healthy recipes" key="healthy recipes" onClick={handleClick}>Healthy Recipes</li>
+          <li value="backpacking" key="backpacking" onClick={handleClick}>Backpacking</li>
         </ul>
       </div>
     )
   }
-}

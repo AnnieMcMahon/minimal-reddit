@@ -1,14 +1,12 @@
 import React from 'react';
 import './Post.css';
-export class Post extends React.Component {
-    render() {
+export function Post(props) {
         return (
             <div className="Post">
                 <div className="Post-information">
-                    <h3>{this.props.post.title}</h3>
-                    <a href={this.props.post.url} target="_blank" rel="noreferrer">link</a>
+                    <h3>{props.post.title}</h3>
+                    <a href={props.post.url} target="_blank" rel="noreferrer">link</a>
                 </div>
             </div>
         )
     }
-};

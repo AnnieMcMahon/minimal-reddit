@@ -1,37 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { SearchBar } from '../Components/SearchBar/SearchBar';
 import { SearchResults } from '../Components/SearchResults/SearchResults';
 import { Categories } from '../Components/Categories/Categories';
-import { Reddit } from '../util/Reddit';
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchResults: [{title: '', id: ' '}]
-    }
-    this.search = this.search.bind(this);
-  }
+function App() {
+  const [searchResults, setSearchResults] = useState([{ title: '', id: ' ' }]);
 
-  search(searchTerm) {
-    Reddit.search(searchTerm).then(searchResults => {
-      this.setState({searchResults: searchResults})
-    })
+  const search = (searchTerm) => {
+    return fetch(`https://www.reddit.com/search.json?q=${searchTerm}`)
+      .then(response => {
+        return response.json();
+      }).then(jsonResponse => {
+        if (!jsonResponse.data) {
+          return [];
+        }
+        return jsonResponse.data.children.map(post => ({
+          id: post.data.id,
+          title: post.data.title,
+          url: post.data.url,
+          media: post.data.media
+        }))
+      }).then(searchResults => {
+        setSearchResults(searchResults)
+      })
   }
-   
-  render() {
-    return (
-      <div>
-        <h1>Minimal Reddit</h1>
-        <div className="App">
-          <SearchBar onSearch={this.search} />
-          <div className="App-boxes">
-            <SearchResults searchResults={this.state.searchResults} />
-            <Categories onSearch={this.search} />
-          </div>
+  return (
+    <div>
+      <h1>Minimal Reddit</h1>
+      <div className="App">
+        <SearchBar onSearch={search} />
+        <div className="App-boxes">
+          <SearchResults searchResults={searchResults} />
+          <Categories onSearch={search} />
         </div>
       </div>
-    )
-  }
-};
+    </div>
+  )
+}
 export default App;
