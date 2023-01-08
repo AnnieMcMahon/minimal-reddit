@@ -15,6 +15,10 @@ li {
   line-height: 2rem;
 }
 
+li:hover {
+  background-color: #262672;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;

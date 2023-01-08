@@ -1,13 +1,5 @@
 const baseUrl = 'https://www.reddit.com';
 
-export const getPosts = async (category = 'Meditation') => {
-  const requestParam = `/r/${category}.json`;
-  const urlToFetch = `${baseUrl}${requestParam}`;
-  const response = await fetch(urlToFetch);
-  const jsonResponse = await response.json();
-  return jsonResponse.data.children.map((post) => post.data);
-};
-
 export const getPostComments = async (postId) => {
   const response = await fetch(`${baseUrl}/comments/${postId}.json`);
   const jsonResponse = await response.json();
@@ -24,7 +16,8 @@ export const Reddit = {
           return [];
         }
         return jsonResponse.data.children.map(post => ({
-          title: post.data.title
+          title: post.data.title,
+          id: post.data.id
         }))
       })
   }

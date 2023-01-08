@@ -3,16 +3,12 @@ import './App.css';
 import { SearchBar } from '../Components/SearchBar/SearchBar';
 import { SearchResults } from '../Components/SearchResults/SearchResults';
 import { Categories } from '../Components/Categories/Categories';
-import { Reddit, getPosts, getPostComments } from '../util/Reddit';
+import { Reddit } from '../util/Reddit';
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResults: [
-        { title: 'title1' },
-        { title: 'title2' },
-        { title: 'title3' }
-      ],
+      searchResults: [{title: '', id: ' '}],
     }
     this.search = this.search.bind(this);
   }
@@ -21,14 +17,6 @@ class App extends React.Component {
     Reddit.search(searchTerm).then(searchResults => {
       this.setState({searchResults: searchResults})
     })
-  }
-
-  displayPosts(category) {
-    getPosts(category);
-  }
-
-  displayComments(id) {
-    getPostComments(id);
   }
    
   render() {
@@ -39,7 +27,7 @@ class App extends React.Component {
           <SearchBar onSearch={this.search} />
           <div className="App-boxes">
             <SearchResults searchResults={this.state.searchResults} />
-            <Categories />
+            <Categories onSearch={this.search} />
           </div>
         </div>
       </div>

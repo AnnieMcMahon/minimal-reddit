@@ -1,24 +1,30 @@
 import React from 'react';
 import './Categories.css';
 
-// const initialState = [
-//   { category: 'Meditation', site: 'https://www.reddit.com/r/Meditation.json' },
-//   { category: 'Hiking', site: 'https://www.reddit.com/r/hiking.json' },
-//   { category: 'Healthy Recipes', site: 'https://www.reddit.com/r/HealthyRecipes.json' },
-//   { category: 'Backpacking', site: 'https://www.reddit.com/r/backpacking.json' }
-// ];
 export class Categories extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {searchTerm: 'Meditation'};
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    this.setState({searchTerm: event.target.innerHTML});
+    this.props.onSearch(this.state.searchTerm);
+  }
+
   render() {
-  return(
-    <div className="Categories" >
-      <h2>Categories</h2>
-      <br />
-      <ul>
-        <li className="meditation">Meditation</li>
-        <li className="hiking">Hiking</li>
-        <li className="recipes">Healthy Recipes</li>
-        <li className="backpacking">Backpacking</li>
-      </ul>
-    </div>
-  )}
+    return (
+      <div className="Categories" >
+        <h2>Categories</h2>
+        <br />
+        <ul>
+          <li value="meditation" key="meditation" onClick={this.handleClick}>Meditation</li>
+          <li value="hiking" key="hiking" onClick={this.handleClick}>Hiking</li>
+          <li value="healthy recipes" key="healthy recipes" onClick={this.handleClick}>Healthy Recipes</li>
+          <li value="backpacking" key="backpacking" onClick={this.handleClick}>Backpacking</li>
+        </ul>
+      </div>
+    )
+  }
 }

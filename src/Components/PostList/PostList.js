@@ -7,7 +7,7 @@ export class PostList extends React.Component {
       <div className="PostList">
         {
           this.props.posts.map(post => {
-            return <Post post={post} key={post.id} />
+            return <Post post={post} key={post.id}/>
           })
         }
       </div>
