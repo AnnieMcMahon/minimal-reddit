@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import './Categories.css';
+import { updateSearchTerm } from '../SearchBar/searchBarSlice';
 
-export function Categories(props) {
-  const [searchTerm, setSearchTerm] = useState('Meditation');
-
+export const Categories = () => {
+  const dispatch = useDispatch();
   const handleClick = (event) => {
-    setSearchTerm(event.target.innerHTML);
-    props.onSearch(searchTerm);
+    dispatch(updateSearchTerm(event.target.innerHTML));
   }
     return (
       <div className="Categories" >
