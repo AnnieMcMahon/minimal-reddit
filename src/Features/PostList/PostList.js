@@ -11,7 +11,7 @@ export const PostList = () => {
 
   useEffect(() => {
     dispatch(fetchPosts(paramToSearch))
-  }, [dispatch]);
+  }, [dispatch, paramToSearch]);
 
   const posts = useSelector(selectPosts);
   return (
