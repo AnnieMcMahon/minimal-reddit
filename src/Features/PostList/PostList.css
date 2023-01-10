@@ -1,0 +1,74 @@
+.PostList {
+  max-width: 100%;
+}
+
+.post {
+  border: 3px solid white; 
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #090a38;
+  box-shadow: 0 4px 2px 2px black;
+}
+
+.postTitle {
+  padding: 15px;
+}
+
+.postMedia, img, video {
+  max-width: 100%;
+}
+
+.postCategory p {
+  padding-top: 15px ;
+  font-size: 0.75rem;
+}
+
+.postTitle h2 {
+text-align: center;
+margin-top: 5px;
+font-size: 1rem;
+}
+
+
+.footerContainer {
+  display: flex;
+  height: 100px;
+  font-size: 0.75rem;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.svgIcon {
+  height: 8%;
+  width: 8%
+}
+
+
+p {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.postUrl a{
+  font-size: 20px;
+}
+
+p a {
+  text-decoration: none;
+}
+
+.footerElement {
+  max-width: 130px;
+  margin: 0;
+  text-align: center;
+}
+
+.postMedia {
+  max-width: 630px;
+  height: auto;
+  width: 90%;
+  margin: auto;
+  display: block;
+}

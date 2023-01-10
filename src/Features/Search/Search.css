@@ -1,0 +1,10 @@
+.search {
+  display: inline-flex;
+  height: 45px;
+  width: 600px;
+}
+
+input {
+  font-size: 1.2rem;
+  padding: 0.7rem;
+}

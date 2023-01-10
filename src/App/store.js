@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { searchResultsReducer } from '../Components/SearchResults/searchResultsSlice';
-import { searchTermReducer } from '../Components/SearchBar/searchBarSlice';
+import postReducer from '../Features/PostList/postSlice';
+import searchReducer from '../Features/Search/searchSlice';
+import categoryReducer from '../Features/Category/categorySlice';
 
 export default configureStore({
   reducer: {
-    searchTerm: searchTermReducer,
-    searchResults: searchResultsReducer
+    searchParam: searchReducer,
+    posts: postReducer,
+    categories: categoryReducer
   }
 })
