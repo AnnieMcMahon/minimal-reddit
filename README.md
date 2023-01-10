@@ -8,11 +8,7 @@ This is a Codecademy project to practice using React/Redux to create an app. The
 *	Build the application using React and Redux
 *	Version control your application with Git and host the repository on GitHub
 *	Use a project management tool (GitHub Projects, Trello, etc.) to plan your work
-*	Write a README (using Markdown) that documents your project including:
-  -	Wireframes
-  -	Technologies used
-  -	Features
-  -	Future work
+*	Write a README (using Markdown) that documents your project including wireframes, technologies used, features, future work
 *	Write unit tests for your components using Jest and Enzyme
 *	Write end-to-end tests for your application
 *	Get 90+ scores on Lighthouse (It is okay to have a score below 90 for Performance if they are related to the media from Reddit)
