@@ -1,4 +1,4 @@
-# Miniaml Reddit App
+# Minimal Reddit App
 Live app: [https://minimal-reddit-annie.netlify.app/](https://minimal-reddit-annie.netlify.app/)
 
 ## Description
