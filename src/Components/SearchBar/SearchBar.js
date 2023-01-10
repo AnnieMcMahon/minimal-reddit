@@ -7,9 +7,9 @@ import { Search } from '../../Features/Search/Search';
 
 export const SearchBar = () => {
   const dispatch = useDispatch();
-  const searchParam = useSelector(selectSearchParam);
+  const param = useSelector(selectSearchParam);
   const handleClick = () => {
-    dispatch(fetchPosts(searchParam));
+    dispatch(fetchPosts(param));
   }
   return (
     <div className="header">

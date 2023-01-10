@@ -6,11 +6,11 @@ import { selectPosts, fetchPosts } from "./postSlice";
 import { selectSearchParam } from "../Search/searchSlice";
 
 export const PostList = () => {
-  const searchParam = useSelector(selectSearchParam);
+  const paramToSearch = useSelector(selectSearchParam);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchPosts(searchParam))
+    dispatch(fetchPosts(paramToSearch))
   }, [dispatch]);
 
   const posts = useSelector(selectPosts);
